@@ -37,7 +37,7 @@ class ellipse : public shape {
 		{
 			if(getCenter().x()< 0 || getCenter().y()< 0)
 			{
-				std::cout << "ellipse center less zero" << endl;
+				std::cout << "ellipse center less zero" << std::endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
@@ -50,7 +50,7 @@ class ellipse : public shape {
 		{
 			if(radii.x()== 0 || radii.y()== 0)
 			{
-				std::cout << "ellipse divide zero"<< endl;
+				std::cout << "ellipse divide zero"<< std::endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
