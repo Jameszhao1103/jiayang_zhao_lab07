@@ -100,9 +100,7 @@ int main(int argc, char *argv[]) {
 	shared_ptr<Polygon> t7 = make_shared<Polygon>(Verts5, 5, color(250)) ;
 	theShapes.push_back(t7);
 
-	for (auto s : theShapes) {
-		s->validate();
-	}
+
 
 
 	string outFilename;
@@ -114,88 +112,90 @@ int main(int argc, char *argv[]) {
 	sizeX = stoi(argv[1]);
 	sizeY = stoi(argv[2]);
 
-	
-	image<color> theImagecolor(sizeX, sizeY, background);
-	for (int i=0; i < 1; i++) {
-		//code to write the files
-		outFilename.append(argv[3]);
-		if (i < 10)
-		  	outFilename.append(to_string(0));
-		outFilename.append(to_string(i));
-		outFilename.append(".ppm");
-		outFile.open(outFilename);
+	for (auto s : theShapes) {
+		s->validate();
+	}
+// 	image<color> theImagecolor(sizeX, sizeY, background);
+// 	for (int i=0; i < 1; i++) {
+// 		//code to write the files
+// 		outFilename.append(argv[3]);
+// 		if (i < 10)
+// 		  	outFilename.append(to_string(0));
+// 		outFilename.append(to_string(i));
+// 		outFilename.append(".ppm");
+// 		outFile.open(outFilename);
 
-		//create the image
-		createImage(theImagecolor, theShapes, color(12));
+// 		//create the image
+// 		createImage(theImagecolor, theShapes, color(12));
 
-		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
-		theImagecolor.fullWriteOut(outFile);
-		outFile.close();
-		outFilename.erase();
+// 		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
+// 		theImagecolor.fullWriteOut(outFile);
+// 		outFile.close();
+// 		outFilename.erase();
 
-	}//end animation loop
+// 	}//end animation loop
 
 
 
-	int backgroundgray = background.r()*0.299+background.g()*0.587+background.b()*0.114;
-	image<int> theImagegray(sizeX, sizeY, backgroundgray);
+// 	int backgroundgray = background.r()*0.299+background.g()*0.587+background.b()*0.114;
+// 	image<int> theImagegray(sizeX, sizeY, backgroundgray);
 
-	for (int i=0; i < 1; i++) {
-		//code to write the files
-		outFilename.append(argv[3]);
-		if (i < 10)
-		  	outFilename.append(to_string(0));
-		outFilename.append(to_string(i));
-		outFilename.append(".pgm");
-		outFile.open(outFilename);
+// 	for (int i=0; i < 1; i++) {
+// 		//code to write the files
+// 		outFilename.append(argv[3]);
+// 		if (i < 10)
+// 		  	outFilename.append(to_string(0));
+// 		outFilename.append(to_string(i));
+// 		outFilename.append(".pgm");
+// 		outFile.open(outFilename);
 
-		//create the image
-		int colorgray =  color(12).r()*0.299+color(12).g()*0.587+color(12).b()*0.114;
-		createImage(theImagegray, theShapes, colorgray);
+// 		//create the image
+// 		int colorgray =  color(12).r()*0.299+color(12).g()*0.587+color(12).b()*0.114;
+// 		createImage(theImagegray, theShapes, colorgray);
 
-		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
-		theImagegray.fullWriteOut(outFile);
-		outFile.close();
-		outFilename.erase();
+// 		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
+// 		theImagegray.fullWriteOut(outFile);
+// 		outFile.close();
+// 		outFilename.erase();
 
-	}//end animation loop
+// 	}//end animation loop
 
-	image<bool> theImageblack(sizeX, sizeY, false);
-	for (int i=0; i < 1; i++) {
-		//code to write the files
-		outFilename.append(argv[3]);
-		if (i < 10)
-		  	outFilename.append(to_string(0));
-			outFilename.append(to_string(i));
-			outFilename.append(".pbm");
-			outFile.open(outFilename);
+// 	image<bool> theImageblack(sizeX, sizeY, false);
+// 	for (int i=0; i < 1; i++) {
+// 		//code to write the files
+// 		outFilename.append(argv[3]);
+// 		if (i < 10)
+// 		  	outFilename.append(to_string(0));
+// 			outFilename.append(to_string(i));
+// 			outFilename.append(".pbm");
+// 			outFile.open(outFilename);
 
-		//create the image
-		createImage(theImageblack, theShapes, true);
+// 		//create the image
+// 		createImage(theImageblack, theShapes, true);
 
-		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
-		theImageblack.fullWriteOut(outFile);
-		outFile.close();
-		outFilename.erase();
+// 		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
+// 		theImageblack.fullWriteOut(outFile);
+// 		outFile.close();
+// 		outFilename.erase();
 
-	}//end animation loop
+// 	}//end animation loop
 
-	image<char> theImageAsci(sizeX, sizeY, 'O');
-	for (int i=0; i < 1; i++) {
-		//code to write the files
-		outFilename.append(argv[3]);
-		if (i < 10)
-		  	outFilename.append(to_string(0));
-			outFilename.append(to_string(i));
-			outFile.open(outFilename);
+// 	image<char> theImageAsci(sizeX, sizeY, 'O');
+// 	for (int i=0; i < 1; i++) {
+// 		//code to write the files
+// 		outFilename.append(argv[3]);
+// 		if (i < 10)
+// 		  	outFilename.append(to_string(0));
+// 			outFilename.append(to_string(i));
+// 			outFile.open(outFilename);
 
-		//create the image
-		createImage(theImageAsci, theShapes, '%');
+// 		//create the image
+// 		createImage(theImageAsci, theShapes, '%');
 
-		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
-		theImageAsci.fullWriteOut(outFile);
-		outFile.close();
-		outFilename.erase();
+// 		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
+// 		theImageAsci.fullWriteOut(outFile);
+// 		outFile.close();
+// 		outFilename.erase();
 
-	}//end animation loop
+// 	}//end animation loop
 }
