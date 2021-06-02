@@ -39,7 +39,7 @@ class Rect : public shape {
 		{
 			if(upperL.x()< 0 || upperL.y()< 0||lowerR.x()< 0 || lowerR.y()< 0)
 			{
-				throw std::invalid_argument("rect vert less zero");
+				std::cout << "rect vert less zero"<< endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
@@ -51,7 +51,7 @@ class Rect : public shape {
 		{
 			if(upperL.x()> lowerR.x() || upperL.y()> lowerR.y())
 			{
-				throw std::invalid_argument("rect order incorrect");
+				std::cout <<"rect order incorrect"<< endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
