@@ -24,7 +24,7 @@ class Polygon : public shape {
 		{
 			if(!check_verts())
 			{
-				std::cerr << "polygon vert less zero" << std::endl;
+				std::cout << "polygon vert less zero" << std::endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
@@ -36,7 +36,7 @@ class Polygon : public shape {
 		{
 			if(concave())
 			{
-				std::cerr << "polygon concave" << std::endl;
+				std::cout << "polygon concave" << std::endl;
 			}
 		}
 		catch(const std::invalid_argument& e)
